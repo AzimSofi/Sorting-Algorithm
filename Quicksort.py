@@ -1,18 +1,18 @@
-def quicksort_algorithm(arrayInput):
+def quicksort_algorithm(array_input):
 
-    if len(arrayInput) <= 1:
-        return arrayInput
+    if len(array_input) <= 1:
+        return array_input
 
     else:
-        pivot = arrayInput[0]
+        pivot = array_input[0]
         left = []
         right = []
         
-        for i in range(1, len(arrayInput)):
-            if arrayInput[i] < pivot:
-                left.append(arrayInput[i])
+        for i in range(1, len(array_input)):
+            if array_input[i] < pivot:
+                left.append(array_input[i])
 
             else:
-                right.append(arrayInput[i])
+                right.append(array_input[i])
                 
         return quicksort_algorithm(left) + [pivot] + quicksort_algorithm(right)

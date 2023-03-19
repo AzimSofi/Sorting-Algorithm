@@ -21,7 +21,7 @@ Currently, this repository contains the following sorting algorithms:
 - Quicksort: implemented in Quicksort.py
 - Mergesort: implemented in Mergesort.py
 
-###Future Plans
+### Future Plans
 In the future, I plan to add more sorting algorithms to this repository, including insertion sort, bubble sort, and selection sort. Additionally, I am considering creating visualizations of these algorithms to help developers understand how they work and how to use them effectively.
 
 ### Contributing

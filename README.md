@@ -16,17 +16,17 @@ print(sorted_list)
 ```
 This will import the quicksort function from the Quicksort.py file and use it to sort the my_list variable.
 
-Current Algorithms
+### Current Algorithms
 Currently, this repository contains the following sorting algorithms:
+- Quicksort: implemented in Quicksort.py
+- Mergesort: implemented in Mergesort.py
 
-Quicksort: implemented in Quicksort.py
-Mergesort: implemented in Mergesort.py
-Future Plans
+###Future Plans
 In the future, I plan to add more sorting algorithms to this repository, including insertion sort, bubble sort, and selection sort. Additionally, I am considering creating visualizations of these algorithms to help developers understand how they work and how to use them effectively.
 
-Contributing
+### Contributing
 If you would like to contribute to this repository, please feel free to submit a pull request with your changes. I welcome contributions from anyone who is interested in improving the quality and functionality of these sorting algorithms.
 
-License
+### License
 This project is licensed under the MIT License - see the LICENSE file for details.
 

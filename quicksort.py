@@ -1,7 +1,6 @@
 def quicksort_algorithm(input_array):
-
     if len(input_array) <= 1:
-        return input_array
+        return input_array, [input_array]
 
     else:
         pivot_element = input_array[0]
@@ -14,5 +13,10 @@ def quicksort_algorithm(input_array):
 
             else:
                 right_array.append(input_array[i])
-                
-        return quicksort_algorithm(left_array) + [pivot_element] + quicksort_algorithm(right_array)
+        
+        sorted_left_array, left_intermediate_states = quicksort_algorithm(left_array)
+        sorted_right_array, right_intermediate_states = quicksort_algorithm(right_array)
+        
+        intermediate_states = left_intermediate_states + [sorted_left_array + [pivot_element] + sorted_right_array] + right_intermediate_states
+        
+        return sorted_left_array + [pivot_element] + sorted_right_array, intermediate_states

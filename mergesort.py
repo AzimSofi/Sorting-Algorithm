@@ -23,4 +23,5 @@ def mergesort(array_input):
         merged_array += left_array[i:]
         merged_array += right_array[j:]
         
-        return merged_array
+        # return intermediate state of merged_array
+        return merged_array, left_array, right_array

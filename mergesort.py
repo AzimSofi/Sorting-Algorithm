@@ -1,27 +1,35 @@
-def mergesort(array_input):
+def merge_sort(arr):
+    def merge(left, right):
+        merged_list = []
+        i, j = 0, 0
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                merged_list.append(left[i])
+                i += 1
+            else:
+                merged_list.append(right[j])
+                j += 1
+        merged_list += left[i:]
+        merged_list += right[j:]
+        return merged_list
 
-    if len(array_input) <= 1:
-        return array_input
+    if len(arr) <= 1:
+        return arr, [arr]
 
     else:
-        middle_index = len(array_input) // 2
-        left_array = mergesort(array_input[:middle_index])
-        right_array = mergesort(array_input[middle_index:])
-        merged_array = []
-        i, j = 0, 0
+        mid = len(arr) // 2
+        left, left_merges = merge_sort(arr[:mid])
+        right, right_merges = merge_sort(arr[mid:])
+        sorted_arr = merge(left, right)
+        merges = []
+        for l in left_merges:
+            for r in right_merges:
+                merges.append(merge(l, r))
+        return sorted_arr, [arr] + merges + [sorted_arr]
 
-        while i < len(left_array) and j < len(right_array):
-
-            if left_array[i] < right_array[j]:
-                merged_array.append(left_array[i])
-                i += 1
-
-            else:
-                merged_array.append(right_array[j])
-                j += 1
-
-        merged_array += left_array[i:]
-        merged_array += right_array[j:]
-        
-        # return intermediate state of merged_array
-        return merged_array, left_array, right_array
+''' Test code
+unsorted_list = [3, 1, 4, 2, 6, 5]
+sorted_list, all_merges = merge_sort(unsorted_list)
+print("Sorted list:", sorted_list)
+print("All merges:", all_merges)
+'''

@@ -20,3 +20,11 @@ def quicksort_algorithm(input_array):
         intermediate_states = left_intermediate_states + [sorted_left_array + [pivot_element] + sorted_right_array] + right_intermediate_states
         
         return sorted_left_array + [pivot_element] + sorted_right_array, intermediate_states
+
+
+''' Test code 
+unsorted_list = [3, 1, 4, 2, 6, 5]
+sorted_list, all_intermediate_states = quicksort_algorithm(unsorted_list)
+print("Sorted list:", sorted_list)
+print("All intermediate states:", all_intermediate_states)
+'''

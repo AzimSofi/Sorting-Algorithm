@@ -1,0 +1,24 @@
+def insertion_sort(array):
+    intermediate_states = [array.copy()]
+    
+    for i in range(1, len(array)):
+        key = array[i]
+        j = i - 1
+        
+        while j >= 0 and array[j] > key:
+            array[j + 1] = array[j]
+            j -= 1
+        
+        array[j + 1] = key
+        intermediate_states.append(array.copy())
+    
+    return intermediate_states
+
+'''Test Code
+unsorted_array = [3, 1, 4, 2, 6, 5]
+intermediate_states = insertion_sort(unsorted_array)
+print(intermediate_states)
+
+# outputs [[3, 1, 4, 2, 6, 5], [1, 3, 4, 2, 6, 5], [1, 3, 4, 2, 6, 5], 
+# [1, 2, 3, 4, 6, 5], [1, 2, 3, 4, 6, 5], [1, 2, 3, 4, 5, 6]]
+'''
